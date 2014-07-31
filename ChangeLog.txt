@@ -1,0 +1,14 @@
+ChangeLog 1.6 -> 1.7
+
+Application/Model/Filecache.php
+Application/Controller/MovieController.php
+Application/Controller/PeopleController.php
+Application/Controller/ErrorController.php
+Application/Controller/PopularController.php
+Application/View/Error/Index.phtml
+Application/View/Movie/Index.phtml
+Application/Translation/de.php
+Application/Layout/Layout.phtml
+Public/Assets/img/de.png
+Public/Assets/tmdb-logo.png
+Public/Assets/css/style.css

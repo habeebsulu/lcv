@@ -1,0 +1,49 @@
+ <aside class="sidebar three columns">
+   <% unless signed_in? %>
+    <div class="row">
+      <%= image_tag "monk_small.jpg", class: "four columns" %>
+      <%= image_tag "signup_now_headline.jpg", class: "eight columns right signup_now_headline"%>
+    </div><!--row-->
+    
+    <div class="row">
+      <%= form_for(@user, html: { class: "nice", id: "side_form" }) do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "small input-text", placeholder: "john@doe.com" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "small input-text", placeholder: "Secret password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "Enter your password again." %>
+          <%= f.password_field :password_confirmation, class: "small input-text", placeholder: "Secret password" %>
+        </div>
+
+        <div class="action">
+          <%= f.submit "Get started", class: "btn centered" %>
+        </div>
+
+      <% end %>
+    </div><!--row-->
+    <% else %>
+      <%= link_to "Manage your resumes", current_user, class:"nice button radius medium" %>
+    <% end %>
+    
+    <div class="row links">
+      <h4>Sitemap</h4>
+      <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Conditions", toc_path %></li>
+        <li><%= link_to "Privacy Policy", privacy_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
+        <li><%= link_to "Resume Templates", resume_templates_path %></li>
+      </ul>
+      </nav>
+    </div><!--row-->
+  </aside><!--sidebar-->
